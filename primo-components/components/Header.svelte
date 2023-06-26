@@ -44,7 +44,7 @@
 					{/each}
 					<li class="buttonWrapper">
 						<Button fullWidth>
-							<span class="button">
+							<span class="headerButton">
 								{buttonText}
 							</span>
 						</Button>
@@ -97,7 +97,7 @@
 		align-items: center;
 		width: 100%;
 	}
-	.button {
+	.headerButton {
 		color: #ffffff;
 		font-weight: 700;
 	}
