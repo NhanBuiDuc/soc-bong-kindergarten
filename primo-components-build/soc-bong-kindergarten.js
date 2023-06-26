@@ -9106,7 +9106,6 @@ function ni(s, e, t) {
   return n[2] = e[t].content, n[3] = e[t].props, n[5] = t, n;
 }
 function ii(s, e) {
-  var c;
   let t, n = (
     /*content*/
     e[2] + ""
@@ -9115,35 +9114,34 @@ function ii(s, e) {
     e[3],
     {
       class: r = "text-xs lg:text-base " + /*props*/
-      ((c = e[3]) == null ? void 0 : c.class)
+      e[3].class
     }
   ], o = {};
-  for (let a = 0; a < u.length; a += 1)
-    o = U(o, u[a]);
+  for (let c = 0; c < u.length; c += 1)
+    o = U(o, u[c]);
   return {
     key: s,
     first: null,
     c() {
       t = k("p"), i = ce(n), l = q(), Jt(t, o), Xe(t, "svelte-1ksiasx", !0), this.first = t;
     },
-    m(a, f) {
-      A(a, t, f), b(t, i), b(t, l);
+    m(c, a) {
+      A(c, t, a), b(t, i), b(t, l);
     },
-    p(a, f) {
-      var h;
-      e = a, f & /*subTitles*/
+    p(c, a) {
+      e = c, a & /*subTitles*/
       2 && n !== (n = /*content*/
       e[2] + "") && Zi(i, n, o.contenteditable), Jt(t, o = ke(u, [
-        f & /*subTitles*/
+        a & /*subTitles*/
         2 && /*props*/
         e[3],
-        f & /*subTitles*/
+        a & /*subTitles*/
         2 && r !== (r = "text-xs lg:text-base " + /*props*/
-        ((h = e[3]) == null ? void 0 : h.class)) && { class: r }
+        e[3].class) && { class: r }
       ])), Xe(t, "svelte-1ksiasx", !0);
     },
-    d(a) {
-      a && y(t);
+    d(c) {
+      c && y(t);
     }
   };
 }
