@@ -12,7 +12,7 @@
 </button>
 
 <style>
-	.container {
+	button.container {
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 		padding-left: 1.25rem;

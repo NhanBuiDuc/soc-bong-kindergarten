@@ -701,10 +701,10 @@ function dl(s) {
   );
   return {
     c() {
-      e = k("button"), t = k("div"), o && o.c(), n = q(), a && a.c(), i = q(), h && h.c(), m(t, "class", "contentContainer svelte-1gkf9d2"), m(e, "class", l = "container " + /*variant*/
+      e = k("button"), t = k("div"), o && o.c(), n = q(), a && a.c(), i = q(), h && h.c(), m(t, "class", "contentContainer svelte-1caoiga"), m(e, "class", l = "container " + /*variant*/
       s[0] + " " + /*fullWidth*/
       (s[1] ? "fullWidth" : "") + " " + /*$$props*/
-      s[2].class + " svelte-1gkf9d2");
+      s[2].class + " svelte-1caoiga");
     },
     m(d, p) {
       A(d, e, p), b(e, t), o && o.m(t, null), b(t, n), a && a.m(t, null), b(t, i), h && h.m(t, null), r = !0;
@@ -768,7 +768,7 @@ function dl(s) {
       7 && l !== (l = "container " + /*variant*/
       d[0] + " " + /*fullWidth*/
       (d[1] ? "fullWidth" : "") + " " + /*$$props*/
-      d[2].class + " svelte-1gkf9d2")) && m(e, "class", l);
+      d[2].class + " svelte-1caoiga")) && m(e, "class", l);
     },
     i(d) {
       r || (E(o, d), E(a, d), E(h, d), r = !0);
