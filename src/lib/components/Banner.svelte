@@ -22,10 +22,6 @@
 		flex-direction: column;
 		width: 100%;
 		background: #f9f9f9;
-
-		@media (min-width: 1024px) {
-			flex-direction: row;
-		}
 	}
 	.left {
 		width: 100%;
@@ -39,5 +35,10 @@
 		padding-bottom: 1rem;
 		background-color: #ffffff;
 		width: 100%;
+	}
+	@media (min-width: 1024px) {
+		.container {
+			flex-direction: row;
+		}
 	}
 </style>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { TrialForm } from '$lib'
 	import QuestionAndAnswer from '$lib/components/QuestionAndAnswer/QuestionAndAnswer.svelte'
 	import { slide } from 'svelte/transition'
 	import CaretDownIcon from '~icons/ion/caret-down-circle-outline'
@@ -37,25 +36,25 @@
 	]
 </script>
 
-<section class="py-12">
-	<div class="mx-auto flex max-w-screen-2xl flex-col gap-8 px-4 lg:flex-row">
-		<div class="flex flex-1 flex-col gap-10 bg-blue-100 p-10">
-			<h2 class="text-center text-2xl font-extrabold uppercase text-indigo-950">
-				Câu hỏi thường gặp
-			</h2>
-			<div class="flex flex-col gap-5">
+<section class="sectionWrapper">
+	<div class="container">
+		<div class="faq">
+			<h2 class="faqTitle">Câu hỏi thường gặp</h2>
+			<div class="faqQuestion">
 				{#each FAQs as { answers, question }}
 					<QuestionAndAnswer let:click={handleQuestionClick}>
-						<button class="mb-2 flex gap-5" on:click={handleQuestionClick}>
-							<CaretDownIcon class="flex-shrink-0 flex-grow-0" width="28" height="28" />
-							<span class="text-left text-base font-semibold text-neutral-700 lg:text-xl">
+						<button class="buttonWrapper" on:click={handleQuestionClick}>
+							<i class="caretIcon">
+								<CaretDownIcon width="28" height="28" />
+							</i>
+							<span class="question">
 								{question}
 							</span>
 						</button>
 
-						<div class="flex flex-col gap-1" slot="answer" transition:slide>
+						<div class="answerContainer" slot="answer" transition:slide>
 							{#each answers as answer}
-								<div class="pl-12 text-sm font-normal text-neutral-800">
+								<div class="answer">
 									<SvelteMarkdown source={answer} />
 								</div>
 							{/each}
@@ -64,8 +63,80 @@
 				{/each}
 			</div>
 		</div>
-		<div class="lg:max-w-[490px]">
-			<TrialForm class="!bg-blue-100" />
-		</div>
 	</div>
 </section>
+
+<style>
+	.sectionWrapper {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+	.container {
+		display: flex;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		flex-direction: column;
+		max-width: 1536px;
+		gap: 2rem;
+	}
+	.faq {
+		display: flex;
+		padding: 2.5rem;
+		background-color: #dbeafe;
+		flex-direction: column;
+		flex: 1 1 0%;
+		gap: 2.5rem;
+	}
+	.faqTitle {
+		color: rgb(30, 27, 75);
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 800;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.faqQuestion {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	.buttonWrapper {
+		display: flex;
+		margin-bottom: 0.5rem;
+		gap: 1.25rem;
+	}
+	.caretIcon {
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+	.question {
+		color: rgb(64, 64, 64);
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-weight: 600;
+		text-align: left;
+	}
+	.answerContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+	.answer {
+		color: rgb(38, 38, 38);
+		padding-left: 3rem;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		font-weight: 400;
+	}
+	@media (min-width: 1024px) {
+		.container {
+			flex-direction: row;
+		}
+		.question {
+			font-size: 1.25rem;
+			line-height: 1.75rem;
+		}
+	}
+</style>

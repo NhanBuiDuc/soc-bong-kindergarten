@@ -14,10 +14,18 @@
 	}
 </script>
 
-<div class="border-b border-[#afb2b4] pb-5">
+<div class="qa">
 	<slot {click} />
 
 	<Collapse {opened}>
 		<slot name="answer" />
 	</Collapse>
 </div>
+
+<style>
+	.qa {
+		padding-bottom: 1.25rem;
+		border-bottom-width: 1px;
+		border-color: #afb2b4;
+	}
+</style>

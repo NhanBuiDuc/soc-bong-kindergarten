@@ -62,11 +62,11 @@
 	]
 </script>
 
-<section class="bg-[#efefef] py-12" id="aDayAtOurSchool">
-	<div class="mx-auto max-w-screen-2xl px-4">
-		<div class="mb-7 flex flex-col gap-5">
+<section class="sectionWrapper" id="aDayAtOurSchool">
+	<div class="container">
+		<div class="contentContainer">
 			<SectionTitle title="MỘT NGÀY TUYỆT VỜI TẠI ILO" {subTitles} />
-			<div class="w-full">
+			<div class="videoContainer">
 				<video controls>
 					<track kind="captions" default />
 					<source
@@ -76,7 +76,7 @@
 				</video>
 			</div>
 		</div>
-		<div class="flex flex-col gap-4 lg:flex-row">
+		<div class="scheduleContainer">
 			<Schedule data={morningSchedule} title="Buổi sáng">
 				<SunIcon width="72" height="70" slot="headerIcon" />
 			</Schedule>
@@ -86,3 +86,37 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.sectionWrapper {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		background: #efefef;
+	}
+	.container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1536px;
+	}
+	.contentContainer {
+		display: flex;
+		margin-bottom: 1.75rem;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	.videoContainer {
+		width: 100%;
+	}
+	.scheduleContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	@media (min-width: 1024px) {
+		.scheduleContainer {
+			flex-direction: row;
+		}
+	}
+</style>
