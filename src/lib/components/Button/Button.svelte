@@ -3,7 +3,7 @@
 	export let fullWidth = false
 </script>
 
-<button class="button {variant} {fullWidth ? 'fullWidth' : ''} {$$props.class}">
+<button class="container {variant} {fullWidth ? 'fullWidth' : ''} {$$props.class}">
 	<div class="contentContainer">
 		<slot name="leftIcon" />
 		<slot />
@@ -12,7 +12,7 @@
 </button>
 
 <style>
-	.button {
+	.container {
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 		padding-left: 1.25rem;
