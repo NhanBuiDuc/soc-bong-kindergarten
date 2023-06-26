@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"build:lib": "vite -c vite-lib.config.ts build && npm run package",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -12,7 +13,11 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"package": "svelte-kit sync && svelte-package -o primo-components"
+	},
+	"peerDependencies": {
+		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.6.5",
@@ -22,6 +27,7 @@
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"@sveltejs/package": "^2.1.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.14",

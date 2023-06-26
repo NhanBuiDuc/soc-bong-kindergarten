@@ -1,10 +1,5 @@
 <script lang="ts">
-	import Banner from './sections/Banner.svelte'
-	import DayAtOurSchool from './sections/DayAtOurSchool.svelte'
-	import Facilities from './sections/Facilities.svelte'
-	import Foundation from './sections/Foundation.svelte'
-	import WhyChooseUs from './sections/WhyChooseUs.svelte'
-	import FAQ from './sections/FAQ.svelte'
+	import { Banner, DayAtOurSchool, Facilities, Foundation, WhyChooseUs, FAQ } from '$lib'
 </script>
 
 <div class="h-full w-full">

@@ -7,8 +7,7 @@
 	import '@fontsource/montserrat/vietnamese-700.css'
 	import '@fontsource/montserrat/vietnamese-800.css'
 	import '@fontsource/montserrat/vietnamese-900.css'
-	import Footer from './layouts/Footer.svelte'
-	import Header from './layouts/Header.svelte'
+	import { Footer, Header } from '$lib'
 	import { fade } from 'svelte/transition'
 
 	const showOnPx = 150

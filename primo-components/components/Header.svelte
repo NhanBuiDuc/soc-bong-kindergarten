@@ -1,15 +1,13 @@
-<script lang="ts">
+<script>
 	import { slide } from 'svelte/transition'
-	import { Button } from '$lib'
-
+	import { Burger, Button } from '..'
 	function handleToggleNav() {
 		opened = !opened
 	}
-
-	const headerNavs: { content: string; href: string }[] = [
-		{ content: 'Nền Tảng Giáo Dục', href: '#foundation' },
-		{ content: 'Một ngày tuyệt vời tại ILO', href: '#aDayAtOurSchool' },
-		{ content: 'Vì sao chọn ILO', href: '#why' }
+	const headerNavs = [
+		{ content: 'N\u1EC1n T\u1EA3ng Gi\xE1o D\u1EE5c', href: '#foundation' },
+		{ content: 'M\u1ED9t ng\xE0y tuy\u1EC7t v\u1EDDi t\u1EA1i ILO', href: '#aDayAtOurSchool' },
+		{ content: 'V\xEC sao ch\u1ECDn ILO', href: '#why' }
 	]
 	let opened = false
 	let innerWidth = 0
@@ -34,7 +32,7 @@
 			/>
 		</div>
 		<div class="flex justify-end lg:hidden">
-			<button class="h-[34px] w-[34px] bg-red-500" on:click={handleToggleNav} />
+			<Burger {opened} onClick={handleToggleNav} />
 		</div>
 		<div class="col-span-full lg:col-span-6">
 			{#if opened}
