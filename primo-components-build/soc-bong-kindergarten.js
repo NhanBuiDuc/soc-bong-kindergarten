@@ -9102,52 +9102,38 @@ class ti extends V {
   }
 }
 function ni(s, e, t) {
-  var l;
   const n = s.slice();
-  n[2] = e[t].content, n[3] = e[t].props, n[6] = t;
-  const i = (
-    /*props*/
-    (l = n[3]) == null ? void 0 : l.class
-  );
-  return n[4] = i, n;
+  return n[2] = e[t].content, n[3] = e[t].props, n[5] = t, n;
 }
 function ii(s, e) {
   let t, n = (
     /*content*/
     e[2] + ""
-  ), i, l, r, u = [
+  ), i, l, r = [
     /*props*/
     e[3],
-    {
-      class: r = "text-xs lg:text-base " + /*className*/
-      e[4]
-    }
-  ], o = {};
-  for (let c = 0; c < u.length; c += 1)
-    o = U(o, u[c]);
+    { class: "subTitle" }
+  ], u = {};
+  for (let o = 0; o < r.length; o += 1)
+    u = U(u, r[o]);
   return {
     key: s,
     first: null,
     c() {
-      t = k("p"), i = ce(n), l = q(), Jt(t, o), Xe(t, "svelte-1ksiasx", !0), this.first = t;
+      t = k("p"), i = ce(n), l = q(), Jt(t, u), Xe(t, "svelte-1ksiasx", !0), this.first = t;
     },
-    m(c, a) {
-      A(c, t, a), b(t, i), b(t, l);
+    m(o, c) {
+      A(o, t, c), b(t, i), b(t, l);
     },
-    p(c, a) {
-      e = c, a & /*subTitles*/
+    p(o, c) {
+      e = o, c & /*subTitles*/
       2 && n !== (n = /*content*/
-      e[2] + "") && Zi(i, n, o.contenteditable), Jt(t, o = ke(u, [
-        a & /*subTitles*/
-        2 && /*props*/
-        e[3],
-        a & /*subTitles*/
-        2 && r !== (r = "text-xs lg:text-base " + /*className*/
-        e[4]) && { class: r }
-      ])), Xe(t, "svelte-1ksiasx", !0);
+      e[2] + "") && Zi(i, n, u.contenteditable), Jt(t, u = ke(r, [c & /*subTitles*/
+      2 && /*props*/
+      e[3], { class: "subTitle" }])), Xe(t, "svelte-1ksiasx", !0);
     },
-    d(c) {
-      c && y(t);
+    d(o) {
+      o && y(t);
     }
   };
 }
@@ -9158,7 +9144,7 @@ function fu(s) {
   );
   const o = (c) => (
     /*i*/
-    c[6]
+    c[5]
   );
   for (let c = 0; c < u.length; c += 1) {
     let a = ni(s, u, c), f = o(a);
