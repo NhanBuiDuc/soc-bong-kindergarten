@@ -10,7 +10,7 @@ export default defineConfig({
 	},
 	build: {
 		target: 'es2015',
-		outDir: 'primo-components',
+		outDir: 'primo-components-build',
 		assetsDir: 'assets',
 		cssCodeSplit: false,
 		rollupOptions: {
