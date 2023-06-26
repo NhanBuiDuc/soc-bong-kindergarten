@@ -11,8 +11,8 @@
 	<h2 class="title">
 		{title}
 	</h2>
-	{#each subTitles as { content, props }, i (i)}
-		<p {...props} class="subTitle">
+	{#each subTitles as { content, props: somethingElse }, i (i)}
+		<p {...somethingElse} class="subTitle {somethingElse?.class}">
 			{content}
 		</p>
 	{/each}

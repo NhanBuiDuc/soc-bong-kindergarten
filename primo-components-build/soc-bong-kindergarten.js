@@ -9106,34 +9106,44 @@ function ni(s, e, t) {
   return n[2] = e[t].content, n[3] = e[t].props, n[5] = t, n;
 }
 function ii(s, e) {
+  var c;
   let t, n = (
     /*content*/
     e[2] + ""
-  ), i, l, r = [
-    /*props*/
+  ), i, l, r, u = [
+    /*somethingElse*/
     e[3],
-    { class: "subTitle" }
-  ], u = {};
-  for (let o = 0; o < r.length; o += 1)
-    u = U(u, r[o]);
+    {
+      class: r = "subTitle " + /*somethingElse*/
+      ((c = e[3]) == null ? void 0 : c.class)
+    }
+  ], o = {};
+  for (let a = 0; a < u.length; a += 1)
+    o = U(o, u[a]);
   return {
     key: s,
     first: null,
     c() {
-      t = k("p"), i = ce(n), l = q(), Jt(t, u), Xe(t, "svelte-1ksiasx", !0), this.first = t;
+      t = k("p"), i = ce(n), l = q(), Jt(t, o), Xe(t, "svelte-1ksiasx", !0), this.first = t;
     },
-    m(o, c) {
-      A(o, t, c), b(t, i), b(t, l);
+    m(a, f) {
+      A(a, t, f), b(t, i), b(t, l);
     },
-    p(o, c) {
-      e = o, c & /*subTitles*/
+    p(a, f) {
+      var h;
+      e = a, f & /*subTitles*/
       2 && n !== (n = /*content*/
-      e[2] + "") && Zi(i, n, u.contenteditable), Jt(t, u = ke(r, [c & /*subTitles*/
-      2 && /*props*/
-      e[3], { class: "subTitle" }])), Xe(t, "svelte-1ksiasx", !0);
+      e[2] + "") && Zi(i, n, o.contenteditable), Jt(t, o = ke(u, [
+        f & /*subTitles*/
+        2 && /*somethingElse*/
+        e[3],
+        f & /*subTitles*/
+        2 && r !== (r = "subTitle " + /*somethingElse*/
+        ((h = e[3]) == null ? void 0 : h.class)) && { class: r }
+      ])), Xe(t, "svelte-1ksiasx", !0);
     },
-    d(o) {
-      o && y(t);
+    d(a) {
+      a && y(t);
     }
   };
 }
