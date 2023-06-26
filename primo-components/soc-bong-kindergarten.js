@@ -600,8 +600,8 @@ function ol(s) {
   let e;
   return {
     c() {
-      e = x("section"), e.innerHTML = `<div class="left svelte-1gqyjly"><figure><img class="leftImage svelte-1gqyjly" src="https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/banner-mobile.webp" alt=""/></figure></div> 
-	<div class="right svelte-1gqyjly"><div class="mx-auto w-full lg:absolute lg:bottom-0 lg:right-0 lg:mx-0 lg:max-w-[490px]"></div></div>`, _(e, "id", "hero"), _(e, "class", "container svelte-1gqyjly");
+      e = x("section"), e.innerHTML = `<div class="left svelte-vayvj5"><figure><img class="leftImage svelte-vayvj5" src="https://ilo.edu.vn/themes/ilo/assets/landingpage/05aug/imgs/imagecompressor/banner-mobile.webp" alt=""/></figure></div> 
+	<div class="right svelte-vayvj5"><div class="mx-auto w-full lg:absolute lg:bottom-0 lg:right-0 lg:mx-0 lg:max-w-[490px]"></div></div>`, _(e, "id", "hero"), _(e, "class", "container svelte-vayvj5");
     },
     m(t, n) {
       A(t, e, n);

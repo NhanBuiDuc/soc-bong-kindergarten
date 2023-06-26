@@ -18,15 +18,26 @@
 
 <style lang="postcss">
 	.container {
-		@apply flex w-full flex-col bg-[#f9f9f9] lg:flex-row;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background: #f9f9f9;
+
+		@media (min-width: 1024px) {
+			flex-direction: row;
+		}
 	}
 	.left {
-		@apply w-full;
+		width: 100%;
 	}
 	.leftImage {
-		@apply max-w-full;
+		max-width: 100%;
 	}
 	.right {
-		@apply relative w-full bg-white py-4;
+		position: relative;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		background-color: #ffffff;
+		width: 100%;
 	}
 </style>

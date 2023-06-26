@@ -14,10 +14,7 @@ export default defineConfig({
 		assetsDir: 'assets',
 		cssCodeSplit: false,
 		rollupOptions: {
-			input: '/src/lib/index.ts', // JavaScript entry point of your library
-			output: {
-				inlineDynamicImports: false
-			}
+			input: '/src/lib/index.ts' // JavaScript entry point of your library
 		},
 		lib: {
 			entry: '/src/lib/index.ts', // point this to the entry point of your library
