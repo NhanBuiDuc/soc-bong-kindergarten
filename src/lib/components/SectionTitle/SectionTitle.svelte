@@ -12,7 +12,8 @@
 		{title}
 	</h2>
 	{#each subTitles as { content, props }, i (i)}
-		<p {...props} class="text-xs lg:text-base {$$props.class}">
+		{@const className = props?.class}
+		<p {...props} class="text-xs lg:text-base {className}">
 			{content}
 		</p>
 	{/each}

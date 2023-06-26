@@ -7,7 +7,6 @@ export type SubTitleProps = {
 }
 declare const __propDef: {
 	props: {
-		[x: string]: any
 		title: string
 		subTitles: SubTitleProps[]
 	}
