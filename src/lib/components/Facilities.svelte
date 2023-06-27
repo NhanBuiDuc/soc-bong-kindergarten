@@ -63,37 +63,27 @@
 	}
 </script>
 
-<section class="py-12">
-	<div class="mx-auto flex max-w-screen-2xl flex-col gap-5 px-4">
+<section class="sectionContainer">
+	<div class="container">
 		<SectionTitle title="CƠ SỞ VẬT CHẤT ILO" {subTitles} />
-		<div
-			class="overflow-hidden"
-			use:emblaCarouselSvelte={{ options, plugins }}
-			on:emblaInit={onInit}
-		>
-			<div class="flex items-center">
+		<div class="sliderWrapper" use:emblaCarouselSvelte={{ options, plugins }} on:emblaInit={onInit}>
+			<div class="slider">
 				{#each images as { src, alt, caption }}
-					<figure class="relative min-w-0 flex-[0_0_100%]">
+					<figure class="imageContainer">
 						<img {src} {alt} />
-						<figcaption
-							class="absolute bottom-5 right-0 rounded-l-3xl bg-[rgba(6,7,77,0.7)] px-9 py-2"
-						>
-							<p class="text-sm text-white">
+						<figcaption class="captionWrapper">
+							<p class="caption">
 								{caption}
 							</p>
 						</figcaption>
 					</figure>
 				{/each}
 			</div>
-			<ul class="mt-2 flex items-center justify-center gap-2.5">
+			<ul class="scrollSnapContainer">
 				{#each scrollSnaps as _, i}
 					{@const active = i === selectedIndex}
-					<li class="grid h-8 w-8 place-items-center">
-						<button
-							class="before:block before:h-2.5 before:w-2.5 before:rounded-full before:bg-gray-300 before:p-1"
-							class:active
-							on:click={() => scrollTo(i)}
-						/>
+					<li class="scrollSnap">
+						<button class="scrollSnapButton" class:active on:click={() => scrollTo(i)} />
 					</li>
 				{/each}
 			</ul>
@@ -102,7 +92,72 @@
 </section>
 
 <style lang="postcss">
-	.active {
-		@apply before:bg-[#06074d]/70;
+	.sectionContainer {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+	.container {
+		display: flex;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		flex-direction: column;
+		max-width: 1536px;
+		gap: 1.25rem;
+	}
+	.sliderWrapper {
+		overflow: hidden;
+	}
+	.slider {
+		display: flex;
+		align-items: center;
+	}
+	.imageContainer {
+		position: relative;
+		min-width: 0;
+		flex: 0 0 100%;
+	}
+	.captionWrapper {
+		position: absolute;
+		right: 0;
+		bottom: 1.25rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		padding-left: 2.25rem;
+		padding-right: 2.25rem;
+		border-top-left-radius: 1.5rem;
+		border-bottom-left-radius: 1.5rem;
+		background: rgba(6, 7, 77, 0.7);
+	}
+	.caption {
+		color: #ffffff;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+	.scrollSnapContainer {
+		display: flex;
+		margin-top: 0.5rem;
+		justify-content: center;
+		align-items: center;
+		gap: 0.625rem;
+	}
+	.scrollSnap {
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+	}
+	.scrollSnapButton::before {
+		content: '';
+		display: block;
+		height: 0.625rem;
+		width: 0.625rem;
+		border-radius: 100%;
+		background-color: rgb(209, 213, 219);
+		padding: 0.25rem;
+	}
+	.active::before {
+		background-color: rgba(6, 7, 77, 0.7);
 	}
 </style>

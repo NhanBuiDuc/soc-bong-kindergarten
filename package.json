@@ -1,5 +1,5 @@
 {
-	"name": "soc-bong-kindergarten",
+	"name": "soc-bong-components",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -66,5 +66,18 @@
 		"embla-carousel-autoplay": "8.0.0-rc07",
 		"embla-carousel-svelte": "8.0.0-rc07",
 		"svelte-markdown": "^0.2.3"
-	}
+	},
+	"exports": {
+		".": {
+			"types": "./primo-components/index.d.ts",
+			"svelte": "./primo-components/index.js"
+		}
+	},
+	"files": [
+		"primo-components",
+		"!primo-components/**/*.test.*",
+		"!primo-components/**/*.spec.*"
+	],
+	"svelte": "./primo-components/index.js",
+	"types": "./primo-components/index.d.ts"
 }

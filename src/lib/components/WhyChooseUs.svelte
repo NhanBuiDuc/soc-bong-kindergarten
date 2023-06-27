@@ -34,15 +34,58 @@
 	]
 </script>
 
-<section class="bg-[#efefef] py-12" id="why">
-	<div class="mx-auto flex max-w-screen-2xl flex-col gap-5 px-4">
-		<h2 class="text-center text-base font-extrabold text-indigo-950 lg:text-[42px]/10">
-			VÌ SAO CHỌN ILO
-		</h2>
-		<div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+<section class="sectionContainer" id="why">
+	<div class="container">
+		<h2 class="title">VÌ SAO CHỌN ILO</h2>
+		<div class="reasonContainer">
 			{#each reasons as { content, title, alt, src }}
 				<Reason {content} {title} {alt} {src} />
 			{/each}
 		</div>
 	</div>
 </section>
+
+<style>
+	.sectionContainer {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		background: #efefef;
+	}
+	.container {
+		display: flex;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		flex-direction: column;
+		max-width: 1536px;
+		gap: 1.25rem;
+	}
+	.title {
+		color: rgb(30, 27, 75);
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-weight: 800;
+		text-align: center;
+	}
+	.reasonContainer {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	@media (min-width: 768px) {
+		.reasonContainer {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2rem;
+		}
+	}
+	@media (min-width: 1024px) {
+		.title {
+			color: 42px;
+			line-height: 40px;
+		}
+		.reasonContainer {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+</style>
